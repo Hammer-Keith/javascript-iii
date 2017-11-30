@@ -32,7 +32,11 @@
 // Inside the function showValues, write a for in loop that concatenates each of the property values and returns the concatenated string.
 
 function showValues( obj ) {
-  // CODE HERE
+  var ans = "";
+  for(var x in obj){
+ans += obj[x];
+  }
+  return ans;
 }
 
 
@@ -41,8 +45,15 @@ function showValues( obj ) {
 
 // Write a function called greaterThan10 that takes in an object. Write a for in loop that loops over the object and changes any value that is great than 10 to 0. Return the updated object.
 
-// CODE HERE
+var greaterThan10 = function(obj){
+  for(var x in obj){
+    if(obj[x]>10){
+      obj[x] = 0;
+    }
 
+  }
+return obj;
+}
 
 
 // ========================
@@ -50,8 +61,12 @@ function showValues( obj ) {
 
 // Write a function called double that takes in an object. Write a for in loop that loops over the object and changes every value to be itself multipled by 2. Return the updated object.
 
-// CODE HERE
-
+var double = function(obj){
+  for(var x in obj){
+    obj[x] = obj[x]*2;
+  }
+return obj;
+}
 
 
 // ========================
@@ -59,8 +74,15 @@ function showValues( obj ) {
 
 // Write a function called secrets that will take in an object. Create an empty string variable. Write a for in loop that loops over the object. If the property name starts with an 'sh', concatenate the value to the string variable. By the end of the for in loop, you should have a sentence, return that sentence.
 
-// CODE HERE
-
+var secrets = function(obj){
+  var str = "";
+  for(var x in obj){
+    if(x.startsWith("sh")){
+      str+= obj[x];
+    }
+  }
+  return str;
+}
 
 // ========================
 
@@ -84,7 +106,10 @@ function showValues( obj ) {
 
 // Write a function called removePassword that takes in an object. Delete the property password and return the object.
 
-// CODE HERE
+var removePassword = function(obj){
+  delete obj.password;
+  return obj;
+}
 
 
 
@@ -100,7 +125,11 @@ var deleteTheBigNumbers = {
   fourth: 200
 }
 
-// CODE HERE
+for(var x in deleteTheBigNumbers){
+  if(deleteTheBigNumbers[x]>100){
+    delete deleteTheBigNumbers[x];
+  }
+}
 
 
 // ========================
@@ -108,8 +137,15 @@ var deleteTheBigNumbers = {
 
 // Write a function called startsWithK that takes an object as a parameter. Write a for in loop to loop over the object. If any property name starts with k, delete that property. Return the updated object.
 
-// CODE HERE
 
+var startsWithK = function(obj){
+  for(var y in obj){
+    if(y.startsWith("k")){
+      delete obj[y];
+    }
+  }
+  return obj;
+}
 
 
 // ========================
@@ -118,4 +154,12 @@ var deleteTheBigNumbers = {
 // Write a function called hiddenTreasure that takes in an object. Write a for in loop that loops over this object. Each property will have a sentence as it's value. If the property value does not contain the word 'treasure', delete the property. Return the updated object.
 // (hint: the method includes() may be of use...)
 
-// CODE HERE
+var hiddenTreasure = function(obj){
+  for(var x in obj){
+  if(!obj[x].includes("treasure")){
+    delete obj[x];
+    
+  }  
+  }
+  return obj;
+}

@@ -21,7 +21,17 @@ Each employee can:
 
 call your class Employee and receive all the data in the constructor in the order listed
 */
-
+class Employee{
+    constructor(first_name, last_name, email, age){
+        this.first_name = first_name,
+        this.last_name = last_name,
+        this.email = email,
+        this.age = age,
+        this.makeWidget = function(){
+            return(this.first_name + " " + this.last_name + " Widget")
+        }
+    }
+}
 
 
 /*
@@ -42,6 +52,28 @@ call your class Manager
 */
 
 
+class Manager{
+    constructor(first_name, last_name, email, age){
+        this.first_name = first_name,
+        this.last_name = last_name,
+        this.email = email,
+        this.age = age,
+        this.makeWidget = function(){
+            return(this.first_name + " " + this.last_name + " Widget")
+        },
+        this.reports = [],
+        this.hire = function(employee){
+            
+             employee[first_name] = new Employee(employee)
+             this.reports.push(employee)
+            
+        },
+        this.fire = function(index){
+            this.reports.splice(index, 1);
+        }
+    }
+}
+Manager()
 
 
 
@@ -64,7 +96,31 @@ Everytime they fire an employee they get $100 added to their bonus.
 
 call your class ProgressiveManager
 */
+class ProgressiveManager{
+    constructor(first_name, last_name, email, age){
+        this.first_name = first_name,
+        this.last_name = last_name,
+        this.email = email,
+        this.age = age,
+        this.title = 'Not a manager',
+        this.bonus = 0,
+        this.makeWidget = function(){
+            return(this.first_name + " " + this.last_name + " Widget")
+        },
+        this.reports = [],
+        this.hire = function(employee){
+            
+             employee[first_name] = new Employee(employee)
+             this.reports.push(employee)
+            
+        },
+        this.fire = function(index){
+            this.reports.splice(index, 1);
+            this.bonus+100;
+        }
+    }
 
+}
 
 
 
